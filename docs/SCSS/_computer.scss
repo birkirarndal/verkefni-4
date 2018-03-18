@@ -1,0 +1,25 @@
+@media screen and (min-width: 48em) {
+    body {
+        max-width: $width;
+    }
+    html {
+        background: $Color;
+    }
+    label, 
+    #menu-toggle,
+    nav {
+        display: none;
+    }
+    footer {
+        margin-bottom: 0em;
+    }
+    .content {
+        display: grid;
+        height: 40em;
+        margin-bottom: 0;
+        grid-template-rows: 1fr;
+        grid-template-columns: 2fr 3fr 2fr;
+        grid-template-areas: "vinstri midja haegri";
+    }
+
+} 

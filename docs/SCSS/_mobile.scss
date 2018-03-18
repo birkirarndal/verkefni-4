@@ -1,0 +1,122 @@
+$width: 60em;
+$Color: beige;
+$GridTemplateAreas:"header"
+                   "midja"
+                   "vinstri"
+                   "haegri"
+                   "footer";
+@mixin gridtemprowscolumn {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
+}
+@mixin highlight($no: none){
+    -webkit-touch-callout: $no; /* iOS Safari */
+    -webkit-user-select: $no; /* Safari */
+     -khtml-user-select: $no; /* Konqueror HTML */
+       -moz-user-select: $no; /* Firefox */
+        -ms-user-select: $no; /* Internet Explorer/Edge */
+            user-select: $no; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    font-family: sans-serif, helvetica;
+    margin: 0 auto;
+    grid-template-areas: $GridTemplateAreas
+                         "nav";
+}
+header,
+.midja,
+.vinstri,
+.haegri,
+footer {
+    padding: 1em;
+}
+header {
+    grid-area: header;
+    background-color: tomato;
+}
+.midja {
+    grid-area: midja;
+    background-color: lightblue;
+}
+.vinstri {
+    grid-area: vinstri;
+    background-color: yellow;
+}
+.haegri {
+    grid-area: haegri;
+    background-color: yellow;
+}
+footer {
+    grid-area: footer;
+    margin-bottom: 2em;
+    background-color: grayscale(invert($Color, 50%));
+}
+nav {
+    grid-area: nav;
+    background-color: black;
+}
+
+.topmenu {
+    display: grid;
+    list-style: none;
+    padding: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    
+    li {
+        height: 100%;
+        margin: 0;
+
+        a {
+            display: block;
+            padding: 1em;
+            color: white;
+        }
+        a:hover {
+            background-color: gray;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 47.99em) {
+label {
+    background-color: blue;
+    position: fixed;
+    bottom: 0px;
+    padding: 10px 0;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    @include highlight;
+}
+
+.topnav {
+    position: fixed;
+    bottom: -999px;
+    width: 100%;
+}
+#menu-toggle {
+    display: none;
+}
+#menu-toggle:checked + label {
+    background-color: rgb(101, 165, 178);
+}
+#menu-toggle:checked ~ .topnav {
+    position: fixed;
+    bottom: 38px;
+}
+} 
+
+
+

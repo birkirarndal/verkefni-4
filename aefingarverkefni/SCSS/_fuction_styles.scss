@@ -1,0 +1,14 @@
+$Litur: red;
+
+h2 {
+	background-color: $litur;
+	color: invert($litur);
+}
+ 
+h3 {
+	color: lighten($litur, 30%);
+}
+
+h4 {
+	color: darken($litur, 10%);
+} 
